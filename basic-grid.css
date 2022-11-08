@@ -1,0 +1,50 @@
+body {
+background:rgb(19,19,19);
+color:#fff;
+font-family:sans-serif;
+}
+
+.card {
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+background:#353535;
+font-size:2.5rem;
+color:#fff;
+box-shadow:rgba(3,8,20,0.1) 0px 0.15rem 0.5rem, rgba(2,8,20,0.1) 0px 0.075rem 0.175rem;
+height:100%;
+width:100%;
+border-radius:4px;
+transition:all 500ms;
+overflow:hidden;
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.card:hover {
+box-shadow:rgba(2,8,20,0.1) 0px 0.35em 1.175em, rgba(2,8,20,0.08) 0px 0.175em 0.5em;
+transform:translateY(-3px) scale(1.1);
+}
+
+
+
+.basic-grid {
+display:grid;
+gap: .5rem;
+
+
+/* 1 too skinny, too much code */
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+
+/* 2 cleaner code */
+grid-template-columns: repeat(12, 1fr);
+
+/* 3 better sizing, but overflow */
+grid-template-columns: repeat(12, minmax(200px, 1fr));
+
+/* 4 final */
+grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
